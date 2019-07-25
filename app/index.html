@@ -4,7 +4,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<meta charset="UTF-8">
 	<meta content="initial-scale=1.0,  user-scalable=yes" name="viewport"/>
-	<title>Document</title>
+	<title>Главная страница — Electronic Arts — Официальный сайт EA</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300,700&display=swap&subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/main.js"></script>
 </head>
@@ -19,10 +20,58 @@
 	<main>
 		<section class="section_1">
 			<picture>
-				<source srcset="img/section1_bg_1024w.jpg" media="(max-width: 1024px)">	
-			 	<source srcset="img/section1_bg_768w.jpg" media="(max-width: 768px)">		
+				<source srcset="img/section1_bg_320w.jpg" media="(max-width: 320px)">
+				<source srcset="img/section1_bg_768w.jpg" media="(max-width: 768px)">
+				<source srcset="img/section1_bg_1024w.jpg" media="(max-width: 1024px)">
+				<source srcset="img/section1_bg_1456w.jpg" media="(max-width: 1456px)">	
+				<source srcset="img/section1_bg_1920w.jpg" media="(max-width: 1920px)">			
 			  <img src="img/section1_bg_1024w.jpg" alt="">
 			</picture>
+			<div class="menu_block">
+				<a href="" class="open_all_game"><span class="icon-vertical_three_dots"></span></a>
+				<img class="logo" src="img/logo_EA.png">
+				<ul class="dropdown_menu">
+					<li>
+						<span>Игры</span>
+						<div class="dropdown_chevron"></div>
+						<div class="dropdown_block"></div>
+					</li>
+					<li>
+						<span>Информация</span>
+						<div class="dropdown_chevron"></div>
+						<div class="dropdown_block"></div>
+					</li>	
+					<li>
+						<span>Поддержка</span>
+						<div class="dropdown_chevron"></div>
+						<div class="dropdown_block"></div>
+					</li>
+				</ul>
+				<ul class="dropdown_menu last_menu">
+					<li>
+						<span>оформляйте подписку и экономьте</span>
+						<div class="dropdown_chevron"></div>
+						<div class="dropdown_block"></div>
+					</li>
+				</ul>
+			</div>
+			<div class="hero_content">
+				<img src="img/origin-logo.png" alt="">
+				<h2>Представляем июльское обновление The Vault!</h2>
+				<a href="" class="btn">Что нового</a>
+			</div>
+		</section>
+		<section class="section_2">
+			<div class="container">
+				<h2>избранные игры</h2>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="game_block">
+							<img src="img/star-wars.jpg" alt="" class="bg">
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 	</main>
 </body>
