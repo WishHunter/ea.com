@@ -44,7 +44,7 @@ a
 	transition: all .3s
 a:hover 
 	text-decoration: none
-
+	color: inherit
 .btn
 	padding: 12px 24px
 	text-align: center
@@ -274,3 +274,110 @@ main
 				opacity: 1
 				li:nth-of-type(2), li:nth-of-type(3)
 					transform: none
+.section_3
+	margin: 56px 0 
+	text-align: center
+	h2 
+		font-size: 44px
+		text-transform: uppercase
+		font-weight: bold
+		font-family: 'Open Sans Condensed', sans-serif
+		margin: 32px
+	#nav_section3
+		margin: 0 auto
+		list-style-type: none
+		max-width: 1240px
+		padding: 0 60px
+		display: flex
+		overflow: hidden
+		position: relative
+		li 
+			position: relative
+			a 
+				font-size: 20px
+				color: $color_black
+				padding: 15px
+				display: inline-block
+				position: relative
+				z-index: 1
+				white-space: nowrap
+			&:after
+				content: ''
+				border-left: 1px solid rgba(0, 0, 0, 0.08)
+				border-right: 1px solid rgba(0, 0, 0, 0.08)
+				display: block
+				width: 100%
+				height: calc(100% - 30px)
+				z-index: 0
+				position: absolute
+				left: 0
+				top: 15px
+			&:before
+				content: ''
+				border-bottom: 2px solid #ff1e3c
+				display: block
+				width: 0
+				height: 100%
+				z-index: 0
+				position: absolute
+				left: 10%
+				bottom: 2px
+				transition: all .1s
+			&:nth-of-type(1):after
+				border-left: none
+			&:last-of-type:after
+				border-right: none
+			&:hover
+				background-color: rgba(0, 0, 0, 0.08)
+			&.active
+				background-color: rgba(0, 0, 0, 0.08)
+				&:before
+					width: 80%
+	.nav_contents
+		border-top: 1px solid rgba(0, 0, 0, 0.08)
+		padding-top: 56px
+		.content
+			.col-sm-4
+				margin-bottom: 16px
+			.news
+				background-color: #fff
+				display: block
+				height: 100%
+				box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 10px -2px
+				animation: all .5s 
+				.content_block
+					padding: 40px 24px
+					text-align: left
+					.header
+						font-size: 20px
+						text-transform: uppercase
+						font-family: 'Open Sans Condensed', sans-serif
+						font-weight: bold
+						letter-spacing: -.5px
+						.name_rubric
+							color: #ff1e3c
+						.date
+							margin-left: 8px
+							&:before 
+								content: ''
+								width: 2px
+								height: 14px
+								display: inline-block
+								margin-right: 8px
+								background-color: $color_black
+					.title
+					 font-size: 28px
+					 font-weight: 300
+					 letter-spacing: normal
+					 line-height: 1.2
+					 margin-bottom: 10px
+					.body
+						font-size: 20px
+				&:hover
+					box-shadow: rgba(0, 0, 0, 0.5) 2px 30px 28px -2px
+					transform: translateY(-10px)
+
+
+
+
+
