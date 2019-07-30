@@ -5,11 +5,8 @@
 	<meta charset="UTF-8">
 	<meta content="initial-scale=1.0,  user-scalable=yes" name="viewport"/>
 	<title>Главная страница — Electronic Arts — Официальный сайт EA</title>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300,700&display=swap&subset=cyrillic" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,400&display=swap&subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
-	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-	<script src="js/main.js"></script>
 </head>
 <body>
 	<header>
@@ -21,39 +18,66 @@
 	</header>
 	<main>
 		<section class="section_1">
-			<picture>
-				<source srcset="img/section1_bg_320w.jpg" media="(max-width: 320px)">
-				<source srcset="img/section1_bg_768w.jpg" media="(max-width: 768px)">
-				<source srcset="img/section1_bg_1024w.jpg" media="(max-width: 1024px)">
-				<source srcset="img/section1_bg_1456w.jpg" media="(max-width: 1456px)">	
-				<source srcset="img/section1_bg_1920w.jpg" media="(max-width: 1920px)">			
-			  <img src="img/section1_bg_1024w.jpg" alt="">
+			<picture class="bg_img">
+				<source srcset="img/section1_bg_320w.jpg" media="(max-width: 319px)">
+				<source srcset="img/section1_bg_768w.jpg" media="(max-width: 767px)">
+				<source srcset="img/section1_bg_1024w.jpg" media="(max-width: 1023px)">
+				<source srcset="img/section1_bg_1456w.jpg" media="(max-width: 1455px)">	
+				<source srcset="img/section1_bg_1920w.jpg" media="(max-width: 1919px)">			
+			  <img src="img/section1_bg_1920w.jpg" alt="">
 			</picture>
-			<div class="menu_block">
+			<div class="main_menu">
 				<a href="" class="open_all_game"><span class="icon-vertical_three_dots"></span></a>
-				<img class="logo" src="img/logo_EA.png">
+				<a href=""><img class="logo" src="img/logo_EA.png"></a>
 				<ul class="dropdown_menu">
-					<li>
+					<li class="dropdown_link">
 						<span>Игры</span>
 						<div class="dropdown_chevron"></div>
-						<div class="dropdown_block"></div>
+						<div class="dropdown_block">
+							<ul>
+								<li><a href="">Просмотр игр</a></li>
+								<li><a href="">Библиотека</a></li>
+								<li><a href="">Бесплатные игры</a></li>
+								<li><a href="">Купить в Origin</a></li>
+							</ul>
+						</div>
 					</li>
-					<li>
+
+					<li class="dropdown_link">
 						<span>Информация</span>
 						<div class="dropdown_chevron"></div>
-						<div class="dropdown_block"></div>
+						<div class="dropdown_block">
+							<ul>
+								<li><a href="">Информация о EA</a></li>
+								<li><a href="">Новости</a></li>
+								<li><a href="">Студии</a></li>
+								<li><a href="">Вакансии</a></li>
+							</ul>
+						</div>
 					</li>	
-					<li>
+
+					<li class="dropdown_link">
 						<span>Поддержка</span>
 						<div class="dropdown_chevron"></div>
-						<div class="dropdown_block"></div>
+						<div class="dropdown_block">
+							<ul>
+								<li><a href="">Помощь</a></li>
+								<li><a href="">Форумы</a></li>
+							</ul>
+						</div>
 					</li>
 				</ul>
+
 				<ul class="dropdown_menu last_menu">
-					<li>
+					<li class="dropdown_link">
 						<span>оформляйте подписку и экономьте</span>
 						<div class="dropdown_chevron"></div>
-						<div class="dropdown_block"></div>
+						<div class="dropdown_block">
+							<ul>
+								<li><a href="">Оформить EA Access</a></li>
+								<li><a href="">Присоединяйтесь к Origin Access</a></li>
+							</ul>
+						</div>
 					</li>
 				</ul>
 			</div>
@@ -67,7 +91,7 @@
 			<div class="container">
 				<h2>избранные игры</h2>
 				<div class="row">
-					<div class="col-sm-4">
+					<div class="col-md-6 col-lg-4">
 						<div class="game_block">
 							<a class="game_link" title="Звёздные Войны Джедаи: Павший Орден" href="">
 								<img src="img/star-wars.jpg" alt="" class="bg">
@@ -83,7 +107,7 @@
 						</div>
 					</div>
 
-					<div class="col-sm-4">
+					<div class="col-md-6 col-lg-4">
 						<div class="game_block">
 							<a class="game_link" title="FIFA 20" href="">
 								<img src="img/fifa20.jpg" alt="" class="bg">
@@ -99,7 +123,7 @@
 						</div>
 					</div>
 
-					<div class="col-sm-4">
+					<div class="col-md-6 col-lg-4">
 						<div class="game_block">
 							<a class="game_link" title="NHL 20" href="">
 								<img src="img/nhl20.jpg" alt="" class="bg">
@@ -115,7 +139,7 @@
 						</div>
 					</div>
 
-					<div class="col-sm-4">
+					<div class="col-md-6 col-lg-4">
 						<div class="game_block">
 							<a class="game_link" title="Apex Legends" href="">
 								<img src="img/apex-legends.jpg" alt="" class="bg">
@@ -131,7 +155,7 @@
 						</div>
 					</div>
 
-					<div class="col-sm-4">
+					<div class="col-md-6 col-lg-4">
 						<div class="game_block">
 							<a class="game_link" title="Battlefield V" href="">
 								<img src="img/bfv.jpg" alt="" class="bg">
@@ -147,7 +171,7 @@
 						</div>
 					</div>
 
-					<div class="col-sm-4">
+					<div class="col-md-6 col-lg-4">
 						<div class="game_block">
 							<a class="game_link" title="The Sims 4" href="">
 								<img src="img/the-sims-4.jpg" alt="" class="bg">
@@ -170,17 +194,287 @@
 		<section class="section_3">
 				<h2>Последние обновления</h2>
 				<ul class="nav" id="nav_section3">
-					<li><a href="">FIFA 19</a></li>
-					<li><a href="">Battlefield V</a></li>
+					<li class="active"><a href="#fifa19_news">FIFA 19</a></li>
+					<li><a href="#battlefield_V_news">Battlefield V</a></li>
 					<li><a href="">Apex Legends</a></li>
 					<li><a href="">Star Wars</a></li>
 					<li><a href="">The Sims 4</a></li>
 					<li><a href="">Anthem</a></li>
 					<li><a href="">EA Access</a></li>
 				</ul>
-			<div class="container">
+				<div class="nav_contents">
+					<div class="container">
+						<div class="row content active" id="fifa19_news">
+							<div class="col-md-6 col-lg-4">
+								<a href="" class="news">
+									<img src="img/fifa-news-1.png" alt="">
+									<div class="content_block">
+										<p class="header">
+											<span class="name_rubric">FIFA 19</span>
+											<span class="date">09.07.2019</span>
+										</p>
+										<p class="title">Полевые заметки: усилия по улучшению отклика игрового процесса FIFA — обнов…</p>
+										<p class="body">Актуальная сводка о наших усилиях по улучшению отклика игрового процесса FIFA 19.</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-md-6 col-lg-4">
+								<a href="" class="news">
+									<img src="img/fifa-news-2.jpg" alt="">
+									<div class="content_block">
+										<p class="header">
+											<span class="name_rubric">FIFA 19</span>
+											<span class="date">09.07.2019</span>
+										</p>
+										<p class="title">Полевые заметки — Подробное описание возможностей игрового процесса FIFA 20</p>
+										<p class="body">Подробное описание некоторых новых игровых возможностей в FIFA 20.</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-md-6 col-lg-4">
+								<a href="" class="news">
+									<img src="img/fifa-news-3.jpg" alt="">
+									<div class="content_block">
+										<p class="header">
+											<span class="name_rubric">FIFA 19</span>
+											<span class="date">08.07.2019</span>
+										</p>
+										<p class="title">Главные игроки дивизиона PlayStation® 4</p>
+										<p class="body">Познакомьтесь с участниками, на которых стоит обратить внимание в Берлине во время плей-офф EA SPORTS FIFA 19 Global Series на PlayStation® 4</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-md-6 col-lg-4">
+								<a href="" class="news">
+									<img src="img/fifa-news-4.jpg" alt="">
+									<div class="content_block">
+										<p class="header">
+											<span class="name_rubric">FIFA 19</span>
+											<span class="date">03.07.2019</span>
+										</p>
+										<p class="title">FUT 19 FUTTIES</p>
+										<p class="body">Вспоминайте лучшее, что было в FUT 19 вместе с FUTTIES с 3 июля по 14 августа.</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-md-6 col-lg-4">
+								<a href="" class="news">
+									<img src="img/fifa-news-5.jpg" alt="">
+									<div class="content_block">
+										<p class="header">
+											<span class="name_rubric">FIFA 19</span>
+											<span class="date">02.07.2019</span>
+										</p>
+										<p class="title">Главные игроки плей-офф на Xbox One</p>
+										<p class="body">Познакомьтесь с участниками, на которых стоит обратить внимание в Гамбурге во время плей-офф EA SPORTS FIFA 19 Global Series на Xbox One</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-md-6 col-lg-4">
+								<a href="" class="news">
+									<img src="img/fifa-news-6.jpg" alt="">
+									<div class="content_block">
+										<p class="header">
+											<span class="name_rubric">FIFA 19</span>
+											<span class="date">02.07.2019</span>
+										</p>
+										<p class="title">Все, что нужно знать о плей-офф на Xbox One</p>
+										<p class="body">Здесь вы найдете все, что нужно знать о плей-офф FIFA Global Series на Xbox One, включая формат, расписание и призы турнира, а также узнаете о том, как можно смотреть матчи из любой точки мира.</p>
+									</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="row content" id="battlefield_V_news">
+							<div class="col-md-6 col-lg-4">
+								<a href="" class="news">
+									<img src="img/battlefield-V-news-1.jpg" alt="">
+									<div class="content_block">
+										<p class="header">
+											<span class="name_rubric">Battlefield V</span>
+											<span class="date">09.07.2019</span>
+										</p>
+										<p class="title">Награды за повышение ранга в главе 4: «Вопреки всему»</p>
+										<p class="body">Актуальная сводка о наших усилиях по улучшению отклика игрового процесса Battlefield V.</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-md-6 col-lg-4">
+								<a href="" class="news">
+									<img src="img/battlefield-V-news-2.jpg" alt="">
+									<div class="content_block">
+										<p class="header">
+											<span class="name_rubric">Battlefield V</span>
+											<span class="date">09.07.2019</span>
+										</p>
+										<p class="title">Карты Battlefield V: «Аль-Сундан»</p>
+										<p class="body">Подробное описание некоторых новых игровых возможностей в FIFA 20.</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-md-6 col-lg-4">
+								<a href="" class="news">
+									<img src="img/battlefield-V-news-3.jpg" alt="">
+									<div class="content_block">
+										<p class="header">
+											<span class="name_rubric">Battlefield V</span>
+											<span class="date">08.07.2019</span>
+										</p>
+										<p class="title">«Ход войны» в Battlefield V — информация об обновлении №1 для главы 4: «Воп…</p>
+										<p class="body">Познакомьтесь с участниками, на которых стоит обратить внимание в Берлине во время плей-офф EA SPORTS Battlefield V Global Series на PlayStation® 4</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-md-6 col-lg-4">
+								<a href="" class="news">
+									<img src="img/battlefield-V-news-4.jpg" alt="">
+									<div class="content_block">
+										<p class="header">
+											<span class="name_rubric">Battlefield V</span>
+											<span class="date">03.07.2019</span>
+										</p>
+										<p class="title">Что нужно знать о режиме «Аванпост»</p>
+										<p class="body">Вспоминайте лучшее, что было в FUT 19 вместе с FUTTIES с 3 июля по 14 августа.</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-md-6 col-lg-4">
+								<a href="" class="news">
+									<img src="img/battlefield-V-news-5.png" alt="">
+									<div class="content_block">
+										<p class="header">
+											<span class="name_rubric">Battlefield V</span>
+											<span class="date">02.07.2019</span>
+										</p>
+										<p class="title">План развития Battlefield V на 2019 год: главы 4 и 5</p>
+										<p class="body">Познакомьтесь с участниками, на которых стоит обратить внимание в Гамбурге во время плей-офф EA SPORTS Battlefield V Global Series на Xbox One</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-md-6 col-lg-4">
+								<a href="" class="news">
+									<img src="img/battlefield-V-news-6.jpg" alt="">
+									<div class="content_block">
+										<p class="header">
+											<span class="name_rubric">Battlefield V</span>
+											<span class="date">02.07.2019</span>
+										</p>
+										<p class="title">Все новости Battlefield V с EA PLAY</p>
+										<p class="body">Здесь вы найдете все, что нужно знать о плей-офф FIFA Global Series на Xbox One, включая формат, расписание и призы турнира, а также узнаете о том, как можно смотреть матчи из любой точки мира.</p>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="" class="btn">Подробнее</a>
+		</section>
+
+		<section class="section_4">
+			<picture class="bg_img">
+				<source srcset="img/section4_bg_320w.png" media="(max-width: 319px)">
+				<source srcset="img/section4_bg_767w.png" media="(max-width: 767px)">
+				<source srcset="img/section4_bg_1023w.png" media="(max-width: 1023px)">
+				<source srcset="img/section4_bg_1455w.png" media="(max-width: 1455px)">	
+				<source srcset="img/section4_bg_1920w.png" media="(max-width: 1919px)">			
+			  <img src="img/section4_bg_1920w.png" alt="">
+			</picture>
+			<div class="content_block">
+				<h2>Потрясающие игры, неограниченный доступ</h2>
+				<p>Присоединяйтесь к Origin Access на ПК или EA Access на Xbox One и PlayStation 4 и играйте сколько угодно в растущую коллекцию потрясающих игр.</p>
+				<div class="links">
+					<a href="" class="link">
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" focusable="false">
+							<title>Origin Access</title>
+							<g stroke-width="0"><path d="M20.98,5.159a15.255,15.255,0,0,0-2.647.059A.2.2,0,0,1,18.112,5,9.9,9.9,0,0,1,19.869.679a.454.454,0,0,0,.093-.238A.41.41,0,0,0,19.58,0a.5.5,0,0,0-.246.059A31.029,31.029,0,0,0,6.8,13.124,14.886,14.886,0,0,0,19.012,34.841a14.46,14.46,0,0,0,2.647-.059.2.2,0,0,1,.221.221,9.9,9.9,0,0,1-1.756,4.318.454.454,0,0,0-.093.238.416.416,0,0,0,.382.441.5.5,0,0,0,.246-.059,30.959,30.959,0,0,0,12.53-13.056A14.877,14.877,0,0,0,20.98,5.159Zm4.835,15.227a5.828,5.828,0,1,1-5.429-6.2A5.824,5.824,0,0,1,25.815,20.386Z"></path></g>
+						</svg>
+						<span>Оформить Origin Access</span>
+					</a>
+					<a href="" class="link">
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" focusable="false">
+							<title>EA Access</title>
+							<g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M32.6160524,24.7934049 L29.4850145,24.7934049 L27.8287342,22.1396011 L22.9824442,22.1396011 L24.6403371, 19.4860278 L26.1703807,19.4860278 L24.3240543,16.5313936 L19.1607905,24.7934049 L5.38371726,24.7934049 L8.70088506, 19.4860278 L6.26599176,19.4860278 L7.9231935,16.8326847 L18.5685378,16.8326847 L16.9101843,19.4860278 L11.8323836, 19.4860278 L10.1735694,22.1396011 L17.6887973,22.1396011 L24.3240543,11.5225435 L32.6160524,24.7934049 Z M20.5010184, 14.1772686 L9.58085597,14.1772686 L11.2405917,11.5225435 L22.1605238,11.5225435 L20.5010184,14.1772686 Z M26.5202958, 11.6568346 L26.2565349,11.6568346 L26.2565349,11.5225435 L26.9432347,11.5225435 L26.9432347,11.6568346 L26.6794738, 11.6568346 L26.6794738,12.3285203 L26.5202958,12.3285203 L26.5202958,11.6568346 Z M27.2291101,12.3285203 L27.0800679, 12.3285203 L27.0800679,11.5225435 L27.3088143,11.5225435 L27.5122211,12.0977147 L27.7147066,11.5225435 L27.9471387, 11.5225435 L27.9471387,12.3285203 L27.8001697,12.3285203 L27.8001697,11.6766442 L27.5790252,12.3285203 L27.4502546, 12.3285203 L27.2291101,11.6766442 L27.2291101,12.3285203 Z M18.9433317,36.209529 C9.42951018,36.209529 1.71755577, 28.4980421 1.71755577,18.9852579 C1.71755577,9.47270413 9.42951018,1.75914409 18.9433317,1.75914409 C28.4553104, 1.75914409 36.166113,9.47270413 36.166113,18.9852579 C36.166113,28.4980421 28.4553104,36.209529 18.9433317, 36.209529 L18.9433317,36.209529 Z M18.9993089,0 C8.50623181,0 0,8.50640723 0,19.0002303 C0,29.4940535 8.50623181, 38 18.9993089,38 C29.4928468,38 38,29.4940535 38,19.0002303 C38,8.50640723 29.4928468,0 18.9993089,0 L18.9993089, 0 Z"></path></g>
+						</svg>
+						<span>Оформить EA Access</span>
+					</a>
+				</div>
 			</div>
 		</section>
 	</main>
+	<footer>
+		<section class="section_1">
+			<div class="container">
+				<div class="row align-items-end">
+					<div class="col-12 col-lg-8 col-xl-9">
+						<ul class="menu">
+							<li><a href="">Руководители</a></li>
+							<li><a href="">Пресса</a></li>
+							<li><a href="">Инвесторы</a></li>
+							<li><a href="">Тестирование</a></li>
+							<li><a href="">Обновления для Origin Access</a></li>
+							<li><a href="">Обновления сетевых компонентов</a></li>
+						</ul>
+					</div>
+					<div class="col-12 col-lg-4 col-xl-3">
+						<h5>присоединяйтесь к нам</h5>
+						<ul class="social">
+							<li><a href=""><span class="icon-VK"></span></a></li>
+							<li><a href=""><span class="icon-facebook"></span></a></li>
+							<li><a href=""><span class="icon-twitter"></span></a></li>
+							<li><a href=""><span class="icon-instagram"></span></a></li>
+							<li><a href=""><span class="icon-twitch"></span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section_2">
+			<div class="container">
+				<div class="row line_1">
+					<div class="col-md-1 col-lg-1">
+						<a href=""><img src="img/logo_EA_small.png" alt=""></a>
+					</div>
+					<div class="col-md-7 col-lg-8">
+						<ul class="menu">
+							<li><a href="">Просмотр игр</a></li>
+							<li><a href="">информация</a></li>
+							<li><a href="">поддержка</a></li>
+							<li><a href="">купить в origin</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 col-lg-3">
+						<select class="btn">
+							<option value="RU">Россия</option>
+						</select>
+					</div>
+				</div>
+				<div class="row align-items-end line_2">
+					<div class="col-sm-8 offset-sm-1">
+						<ul class="menu">
+							<li><a href="">Юридическая информация</a></li>
+							<li><a href="">Пользовательское соглашение</a></li>
+							<li><a href="">Правила соблюдения конфиденциальности информации и идентификации пользователя (ваша конфиденциальность)</a></li>
+						</ul>
+						<p class="copirating">© 2019 Electronic Arts Inc.</p>
+					</div>
+					<div class="col-sm-3">
+						<a href=""><img src="img/truste.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
 </body>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script src="js/main.js"></script>
 </html>

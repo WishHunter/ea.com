@@ -19,6 +19,21 @@
 	-webkit-font-smoothing: antialiased
 	-moz-osx-font-smoothing: grayscale
 
+.icon-facebook:before
+	content: "\e904"
+
+.icon-instagram:before
+	content: "\e905"
+
+.icon-twitch:before 
+	content: "\e906"
+
+.icon-twitter:before
+	content: "\e907"
+
+.icon-VK:before 
+	content: "\e908"
+
 .icon-vertical_three_dots:before 
 	content: "\e903"
 
@@ -33,28 +48,33 @@
 
 $color_black: #161616
 $color_white: #f3f3f3
+$color_main: #ff1e3c
+
+html
+	font-size: 20px
 
 body
 	font-family: 'Open Sans', sans-serif
-	background-color: #f3f3f3
+	background-color: $color_white
 
-
+select:focus, button:focus, a:focus
+	outline: none
 a
 	color: $color_black
 	transition: all .3s
 a:hover 
 	text-decoration: none
-
+	color: inherit
 .btn
 	padding: 12px 24px
 	text-align: center
-	font-size: 18px
+	font-size: 1rem
 	position: relative
-	color: #161616
+	color: $color_black
 	display: inline-block
 	&:before 
 		content: ""
-		border: 2px solid #161616
+		border: 2px solid $color_black
 		border-radius: 3px
 		position: absolute
 		left: 0
@@ -63,12 +83,13 @@ a:hover
 		height: 100%
 		transition: all .2s 
 	&:hover
-		color: #161616
+		color: $color_black
 		&:before
 			transform: scale(1.05)
 img 
 	max-width: 100%
-
+.bg_img img
+	width: 100%
 .menu 
 	margin: 0
 	list-style-type: none
@@ -82,7 +103,8 @@ header
 	background-color: $color_black
 	padding: 0 32px
 	text-align: right
-	z-index: 1
+	z-index: 10
+	transition: all .6s cubic-bezier(.5,.25,.015,1)
 	.menu 
 		li 
 			margin: 0 10px
@@ -90,7 +112,7 @@ header
 				padding: 7px
 				color: #fff
 				opacity: .7
-				font-size: 18px
+				font-size: .9rem
 				display: inline-block
 				&:hover
 					opacity: 1
@@ -98,179 +120,581 @@ header
 					color: #a3a3a3
 main 
 	margin-top: 41px
-.section_1
-	position: relative
-	.menu_block
-		position: absolute
-		width: calc(100% - 60px)
-		margin: 0 auto
-		border-radius: 4px
-		background-color: #fff
-		top: 15px
-		left: 30px
-		display: flex
-		align-items: center
-		padding: 14px 25px 14px 17px
-		.open_all_game
-			font-size: 20px
-			&:hover
-				transform: scale(1.4)
-				color: #ff1e3c
-		.logo
-			margin-left: 12px
-			max-height: 40px
-		.dropdown_menu
-			margin: 0
-			padding: 0
-			margin-left: 10px
-			font-family: 'Open Sans Condensed', sans-serif
-			li 
-				display: inline-flex
-				align-items: center
-				padding: 0 20px
-				position: relative
-				cursor: pointer
-				span 
-					font-size: 12px
-					color: $color_black
-					text-transform: uppercase
-					font-weight: bold
-					line-height: 1
-					transition: all .3s
-				.dropdown_chevron
-					display: block
-					width: .8em
-					height: .4em
-					position: relative
-					margin-left: 5px
-					&:before, &:after
-						content: ''
-						display: block
-						border-radius: .5em
-						border-top: .05em solid $color_black
-						height: .1em
-						width: .5em
-						position: absolute
-						top: 50%
-					&:before
-						left: 0
-						transform: rotate(45deg)
-						transition: all .3s
-					&:after
-						right: 0
-						transform: rotate(-45deg)
-						transition: all .3s
-				&:hover
-					span
-						color: #ff1e3c
-					.dropdown_chevron
-						&:before
-							border-color: #ff1e3c
-							transform: rotate(-45deg)
-						&:after
-							border-color: #ff1e3c
-							transform: rotate(45deg)
-		.last_menu
-			margin-left: auto
-			li 
-				span 
-					font-size: 14px
-					font-weight: normal
-					font-family: 'Open Sans', sans-serif
-				&:hover
-					span
-						color: $color_black
-					.dropdown_chevron
-							&:before, &:after
-								border-color: $color_black
-	.hero_content
-		position: absolute
-		top: 45%
-		right: 50%
-		left: 7vw
-		transform: translateY(-55%)
-		text-align: center
-		h2
-			font-size: 20px
-			font-weight: normal
-			color: #f3f3f3
-			margin-bottom: 21px
-		.btn
-			color: #f3f3f3
-			&:before 
-				border: 2px solid #f3f3f3
-			&:hover
-				color: #f3f3f3
-.section_2
-	margin: 56px 0 
-	text-align: center
-	h2 
-		font-size: 44px
-		text-transform: uppercase
-		font-weight: bold
-		font-family: 'Open Sans Condensed', sans-serif
-		margin: 32px
-	.col-sm-4
-		padding: 15px
-	.game_block
+	.section_1
 		position: relative
-		margin-bottom: 16px
-		.game_link 
-			display: inline-block
-			position: relative
-			z-index: 1
-			&:before
-				content: ''
-				display: block
-				position: absolute
-				left: 0
-				top: 0
-				width: 100%
-				height: 100%
-				background-color: rgba(0,0,0,.3)
-				transition: all .2s ease-out
-		.hover_block
+		.main_menu
+			position: absolute
+			width: calc(100% - 60px)
+			margin: 0 auto
+			border-radius: 4px
+			background-color: #fff
+			top: 15px
+			left: 30px
+			display: flex
+			align-items: center
+			padding: 10px 25px 10px 17px
+			transition: all .6s cubic-bezier(.5,.25,.015,1)
+			.open_all_game
+				font-size: 1rem
+				&:hover
+					transform: scale(1.4)
+					color: $color_main
+			.logo
+				margin-left: 12px
+				max-height: 48px
+				transition: all .5s cubic-bezier(.5,.25,.015,1)
+			.dropdown_menu
+				margin: 0
+				padding: 0
+				margin-left: 24px
+				font-family: 'Open Sans Condensed', sans-serif
+				li 
+					display: inline-flex
+					align-items: center
+					padding: 0 24px
+					position: relative
+					cursor: pointer
+					span 
+						font-size: 1rem
+						color: $color_black
+						text-transform: uppercase
+						font-weight: bold
+						line-height: 1
+						transition: all .3s
+					.dropdown_chevron
+						display: block
+						width: .8em
+						height: .4em
+						position: relative
+						margin-left: 5px
+						&:before, &:after
+							content: ''
+							display: block
+							border-radius: .5em
+							border-top: .1em solid $color_black
+							height: .1em
+							width: .5em
+							position: absolute
+							top: 50%
+						&:before
+							left: 0
+							transform: rotate(45deg)
+							transition: all .3s
+						&:after
+							right: 0
+							transform: rotate(-45deg)
+							transition: all .3s
+					&:hover
+						span
+							color: $color_main
+						.dropdown_chevron
+							&:before
+								border-color: $color_main
+								transform: rotate(-45deg)
+							&:after
+								border-color: $color_main
+								transform: rotate(45deg)
+					.dropdown_block
+						position: absolute
+						left: 0
+						top: 100%
+						z-index: 5
+						transform: scale(0)
+						transition: all .1s cubic-bezier(.5,.25,.015,1)
+						ul
+							margin-top: 30px
+							background-color: rgba(255,255,255,.95)
+							border-radius: 4px
+							padding: 0 35px 10px
+							transform: scale(0)
+							transform-origin: top
+							transition: all .3s .1s cubic-bezier(.5,.25,.015,1)
+							li
+								margin: 10px 0
+								padding: 0
+								display: block
+								transition: all .4s .2s cubic-bezier(.5,.25,.015,1) 
+								a 
+									white-space: nowrap
+									color: $color_black
+									font-weight: 300
+									margin: 5px 0
+									font-size: .8rem
+									line-height: 1em
+								a:hover
+									color: $color_main
+					.dropdown_block.open
+						transform: scale(1)
+						ul
+							transform: scale(1) 
+							li 
+								transform: translateY(5px)
+			.last_menu
+				margin-left: auto
+				li 
+					span 
+						font-size: 1rem
+						font-weight: normal
+						font-family: 'Open Sans', sans-serif
+					&:hover
+						span
+							color: $color_black
+						.dropdown_chevron
+								&:before, &:after
+									border-color: $color_black
+					.dropdown_block
+						left: auto
+						right: 0
+		.main_menu.fixed
+			position: fixed
+			left: 0
+			top: 0
+			width: 100%
+			border-radius: 0
+			z-index: 9
+			.logo
+				max-height: 40px
+		.main_menu.fixed.top
+			top: 41px
+		.hero_content
+			position: absolute
+			top: 45%
+			right: 50%
+			left: 7vw
+			transform: translateY(-55%)
 			text-align: center
+			h2
+				font-size: 1rem
+				font-weight: normal
+				color: $color_white
+				margin-bottom: 21px
+			.btn
+				color: $color_white
+				&:before 
+					border: 2px solid $color_white
+				&:hover
+					color: $color_white
+	.section_2
+		margin: 56px 0 
+		text-align: center
+		h2 
+			font-size: 2.2rem
+			text-transform: uppercase
+			font-weight: bold
+			font-family: 'Open Sans Condensed', sans-serif
+			margin: 32px
+		.col-md-6
+			padding: 15px
+		.game_block
+			position: relative
+			margin-bottom: 16px
+			.game_link 
+				display: inline-block
+				position: relative
+				z-index: 1
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					left: 0
+					top: 0
+					width: 100%
+					height: 100%
+					background-color: rgba(0,0,0,.3)
+					transition: all .2s ease-out
+			.hover_block
+				text-align: center
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				cursor: pointer
+				z-index: 2
+				.logo 
+					max-width: 80%
+					transition: all .4s
+					transform: translateY(100%)
+					filter: drop-shadow(8px 7px 23px #000)
+				ul 
+					list-style-type: none
+					margin: 0
+					margin-top: 20px
+					padding: 0
+					opacity: 0
+					li 
+						text-align: center
+						height: 40px
+						margin-bottom: 10px
+						border-bottom: 1px solid rgba(255,255,255,.2)
+						transition: all .4s
+						a 
+							color: #a3a3a3
+							font-size: .9rem
+							white-space: nowrap
+							&:hover 
+								color: $color_white
+						&:nth-of-type(2)
+							transform: translateY(-100%)
+						&:nth-of-type(3)
+							transform: translateY(-200%)
+		.game_block:hover 
+			.game_link:before 
+				background-color: rgba(252,36,66,.9)
+			.hover_block
+				.logo 
+					transform: none
+				ul 
+					opacity: 1
+					li:nth-of-type(2), li:nth-of-type(3)
+						transform: none
+	.section_3
+		margin: 56px 0 
+		text-align: center
+		h2 
+			font-size: 2.2rem
+			text-transform: uppercase
+			font-weight: bold
+			font-family: 'Open Sans Condensed', sans-serif
+			margin: 32px
+		#nav_section3
+			margin: 0 auto
+			list-style-type: none
+			max-width: 1240px
+			padding: 0 60px
+			display: flex
+			overflow: hidden
+			position: relative
+			li 
+				position: relative
+				a 
+					font-size: 1rem
+					color: $color_black
+					padding: 15px
+					display: inline-block
+					position: relative
+					z-index: 1
+					white-space: nowrap
+				&:after
+					content: ''
+					border-left: 1px solid rgba(0, 0, 0, 0.08)
+					border-right: 1px solid rgba(0, 0, 0, 0.08)
+					display: block
+					width: 100%
+					height: calc(100% - 30px)
+					z-index: 0
+					position: absolute
+					left: 0
+					top: 15px
+				&:before
+					content: ''
+					border-bottom: 2px solid $color_main
+					display: block
+					width: 0
+					height: 100%
+					z-index: 0
+					position: absolute
+					left: 10%
+					bottom: 2px
+					transition: all .1s
+				&:nth-of-type(1):after
+					border-left: none
+				&:last-of-type:after
+					border-right: none
+				&:hover
+					background-color: rgba(0, 0, 0, 0.08)
+				&.active
+					background-color: rgba(0, 0, 0, 0.08)
+					&:before
+						width: 80%
+		.nav_contents
+			border-top: 1px solid rgba(0, 0, 0, 0.08)
+			padding-top: 56px
+			padding-bottom: 36px
+			.content
+				display: none
+				.col-md-6
+					margin-bottom: 16px
+				.news
+					background-color: #fff
+					display: block
+					height: 100%
+					box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 10px -2px
+					animation: all .5s 
+					.content_block
+						padding: 40px 24px
+						text-align: left
+						.header
+							font-size: 1rem
+							text-transform: uppercase
+							font-family: 'Open Sans Condensed', sans-serif
+							font-weight: bold
+							letter-spacing: -.5px
+							.name_rubric
+								color: $color_main
+							.date
+								margin-left: 8px
+								&:before 
+									content: ''
+									width: 2px
+									height: 14px
+									display: inline-block
+									margin-right: 8px
+									background-color: $color_black
+						.title
+						 font-size: 1.4rem
+						 font-weight: 300
+						 letter-spacing: normal
+						 line-height: 1.2
+						 margin-bottom: 10px
+						.body
+							font-size: 1rem
+					&:hover
+						box-shadow: rgba(0, 0, 0, 0.5) 2px 30px 28px -2px
+						transform: translateY(-10px)
+			.active
+				display: flex
+	.section_4
+		position: relative
+		.content_block
 			position: absolute
 			left: 50%
 			top: 50%
-			transform: translate(-50%, -50%)
-			cursor: pointer
-			z-index: 2
-			.logo 
-				max-width: 80%
-				transition: all .4s
-				transform: translateY(100%)
-				filter: drop-shadow(8px 7px 23px #000)
-			ul 
-				list-style-type: none
-				margin: 0
-				margin-top: 20px
-				padding: 0
-				opacity: 0
-				li 
+			transform: translateY(-50%)
+			padding-right: 10vw
+			max-width: 800px
+			h2
+				font-size: 2.6rem
+				font-weight: bold
+				font-family: 'Open Sans Condensed', sans-serif
+				text-transform: uppercase
+			p 
+				margin-top: 26px
+				font-size: 1rem
+			.links
+				display: flex
+				margin-top: 24px
+				.link 
+					display: block
 					text-align: center
-					height: 40px
-					margin-bottom: 10px
-					border-bottom: 1px solid rgba(255,255,255,.2)
-					transition: all .4s
+					svg
+						width: 40px
+						fill: #f56c2c
+						display: inline-block
+						transition: all .1s
+					span 
+						margin-top: 14px
+						font-size: 1rem
+						color: #f56c2c
+						display: block
+					&:last-of-type
+						border-left: 1px solid #a3a3a3
+						margin-left: 24px
+						padding-left: 24px
+						svg
+							fill: #0089cd
+						span 
+							color: #0089cd
+					&:hover 
+						svg 
+							transform: scale(1.2)
+footer
+	.section_1
+		padding: 19px 0 63px
+		background-color: #eaeaea
+		ul
+			list-style-type: none
+			margin: 0
+			padding: 0
+			li 
+				display: inline-block
+		.menu 
+			a 
+				color: $color_black
+				font-size: .8rem
+				margin: 6px 40px 5px 0
+				display: inline-block
+				transition: all .1s linear
+				&:hover
+					color: $color_main
+		.col-sm-3
+			text-align: right
+		h5
+			margin: 32px 0 13px
+			color: $color_black
+			font-size: 1rem
+			font-weight: bold
+			text-transform: uppercase
+			font-family: 'Open Sans Condensed', sans-serif
+		.social
+			a 
+				font-size: 1.1rem
+				color: $color_main
+				margin-right: 30px
+				transition: all .1s linear
+				display: inline-block
+				&:hover
+					transform: scale(1.272)
+			li:last-of-type
+				a 
+					margin-right: 0
+	.section_2
+		padding: 26px 0 48px
+		ul
+			list-style-type: none
+			margin: 0
+			padding: 0
+			li 
+				display: inline-block
+				a 
+					color: #a3a3a3
+		.line_1
+			margin-bottom: 8px
+			.menu
+				li
+					margin: 16px 35px 16px 0
 					a 
-						color: #a3a3a3
-						font-size: 18px
-						white-space: nowrap
-						&:hover 
-							color: #f3f3f3
-					&:nth-of-type(2)
-						transform: translateY(-100%)
-					&:nth-of-type(3)
-						transform: translateY(-200%)
-	.game_block:hover 
-		.game_link:before 
-			background-color: rgba(252,36,66,.9)
-		.hover_block
-			.logo 
+						font-size: .9rem
+						font-family: serif
+						font-weight: 700
+						text-transform: uppercase
+		.line_2
+			.menu
+				li
+					margin: 2px 36px 0 0
+					a 
+						font-size: .8rem
+			.copirating
+				margin-top: 19px
+				font-size: .8rem
+				color: #a3a3a3
+		.btn
+			min-width: 190px
+			padding-left: 24px
+			padding-right: 24px
+			background-color: $color_white
+			background-image: url('../img/select_line.svg')
+			background-repeat: no-repeat
+			background-position: 95% center
+			background-size: 16px
+			border-radius: 3px
+			border-width: 2px
+			appearance: none
+			color: #a3a3a3
+			font-size: .75rem
+		.col-sm-3
+			text-align: right
+
+
+@media only screen and (max-width: 1455px)
+	main 
+		.section_1 
+			.main_menu 
+				.logo
+					max-height: 40px
+				.dropdown_menu 
+					li 
+						span
+							font-size: .6rem
+			.main_menu.fixed 
+				.logo
+					max-height: 32px
+		.section_4 
+			.content_block 
+				h2
+					font-size: 2.2rem
+	footer 
+		.section_2 
+			.line_1 
+				.menu 
+					li 
+						margin-top: 0
+						a
+							font-size: .8rem
+			.line_2 
+				.menu 
+					li 
+						a
+							font-size: .7rem
+				.copirating
+					font-size: .7rem
+
+@media only screen and (max-width: 1023px)
+	html
+		font-size: 18px
+	main 
+		.section_1 
+			.main_menu 
+				.dropdown_menu
+					display: none
+				.last_menu
+					display: block
+		.section_4 
+			.content_block 
+				h2
+					font-size: 1.7rem
+				p 
+					font-size: .8rem
+					margin-top: 20px
+@media only screen and (max-width: 767px)
+	.btn
+		width: 95%
+	main 
+		.section_1 
+			.main_menu
+				width: 100%
+				top: 0
+				left: 0
+				border-radius: 0
+				.logo
+					max-height: 32px
+				.last_menu
+					display: none
+			.main_menu.fixed 
+				.logo
+					max-height: 24px
+			.hero_content
+				left: 0
+				right: 0
+				top: 60%
+				width: 100%
+				text-align: center
+				h2 
+					font-size: 1.9rem
+		.section_2 
+			margin: 40px 0
+			h2
+				margin: 0
+		.section_3 
+			.nav_contents 
+				.content 
+					.news
+						img 
+							display: none
+						.content_block
+							text-align: center
+							padding: 24px 16px
+							.title
+								font-size: 1.2rem
+							.body
+								display: none
+		.section_4 
+			.content_block
+				position: relative
+				left: 0
+				right: 0
+				top: 0
+				bottom: 0
 				transform: none
-			ul 
-				opacity: 1
-				li:nth-of-type(2), li:nth-of-type(3)
-					transform: none
+				padding-right: 15px
+				padding-left: 15px
+	footer 
+		.section_1 
+			.menu
+				display: flex 
+				flex-wrap: wrap
+				li
+					width: 50%
+			h5
+				border-top: 1px solid #969696
+				margin-top: 12px
+				padding-top: 20px
