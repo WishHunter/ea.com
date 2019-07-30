@@ -36,12 +36,12 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 		notify: false // Отключаем уведомления
 	})
 });
-// gulp.task('css-libs', function() {
-//     return gulp.src('app/sass/style.sass') // Выбираем файл для минификации
-// 		.pipe(cssnano()) // Сжимаем
-// 		.pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
-// 		.pipe(gulp.dest('app/css')); // Выгружаем в папку app/css
-// });
+gulp.task('css-libs', function() {
+    return gulp.src('app/css/style.css') // Выбираем файл для минификации
+		.pipe(cssnano()) // Сжимаем
+		.pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
+		.pipe(gulp.dest('dist/css')); // Выгружаем в папку app/css
+});
 
 gulp.task('clean', function() {
     return del.sync('dist'); // Удаляем папку dist перед сборкой
@@ -104,4 +104,4 @@ gulp.task('watch', function() {
 })
 
 gulp.task('default', gulp.parallel('sass', 'scripts', 'browser-sync', 'watch'));
-gulp.task('build', gulp.parallel('prebuild', 'clean', 'img', 'sass', 'scripts'));
+gulp.task('build', gulp.parallel('prebuild', 'clean', 'img', 'sass', 'css-libs', 'scripts'));

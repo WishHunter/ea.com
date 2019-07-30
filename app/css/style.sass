@@ -19,32 +19,41 @@
 	-webkit-font-smoothing: antialiased
 	-moz-osx-font-smoothing: grayscale
 
-.icon-facebook:before
-	content: "\e904"
+.icon-close:before
+	content: "\e90b"
 
-.icon-instagram:before
+.icon-gorizontal_three_dots:before
+	content: "\e90a"
+
+.icon-burger:before 
+	content: "\e900"
+
+.icon-facebook:before
 	content: "\e905"
 
-.icon-twitch:before 
+.icon-instagram:before
 	content: "\e906"
 
-.icon-twitter:before
+.icon-twitch:before 
 	content: "\e907"
 
-.icon-VK:before 
+.icon-twitter:before
 	content: "\e908"
 
+.icon-VK:before 
+	content: "\e909"
+
 .icon-vertical_three_dots:before 
-	content: "\e903"
+	content: "\e904"
 
 .icon-EA_icon:before 
-	content: "\e902"
+	content: "\e903"
 
 .icon-question:before 
-	content: "\e901"
+	content: "\e902"
 
 .icon-user:before 
-	content: "\e900"
+	content: "\e901"
 
 $color_black: #161616
 $color_white: #f3f3f3
@@ -229,6 +238,8 @@ main
 							transform: scale(1) 
 							li 
 								transform: translateY(5px)
+			.menu_mobile_link
+				display: none
 			.last_menu
 				margin-left: auto
 				li 
@@ -256,6 +267,8 @@ main
 				max-height: 40px
 		.main_menu.fixed.top
 			top: 41px
+		.menu_mobile
+			display: none
 		.hero_content
 			position: absolute
 			top: 45%
@@ -288,6 +301,8 @@ main
 		.game_block
 			position: relative
 			margin-bottom: 16px
+			.open_hover_block, .close_hover_block
+				display: none
 			.game_link 
 				display: inline-block
 				position: relative
@@ -337,7 +352,7 @@ main
 							transform: translateY(-100%)
 						&:nth-of-type(3)
 							transform: translateY(-200%)
-		.game_block:hover 
+		.game_block:hover
 			.game_link:before 
 				background-color: rgba(252,36,66,.9)
 			.hover_block
@@ -621,13 +636,139 @@ footer
 @media only screen and (max-width: 1023px)
 	html
 		font-size: 18px
-	main 
+	html.overflow
+		overflow: hidden
+	main
+		margin-top: 38px 
 		.section_1 
 			.main_menu 
 				.dropdown_menu
 					display: none
+					li 
+						span
+							font-size: .9rem
+				.menu_mobile_link
+					display: block
+					margin-left: 48px
+					span 
+						font-family: 'Open Sans Condensed', sans-serif
+						font-size: .9rem
+						font-weight: bold
+						text-transform: uppercase
+						vertical-align: top
+					.icon-burger
+						margin-left: 8px
+						font-weight: normal
 				.last_menu
 					display: block
+			.main_menu.fixed.top
+				top: 38px
+			.menu_mobile
+				position: fixed
+				left: 0
+				top: 0
+				width: 100%
+				height: 100%
+				transform: translateX(-100%)
+				transition: transform .5s cubic-bezier(.5,.25,.015,1)
+				z-index: 9
+				.menu_mobile_bg
+					display: block
+					position: absolute
+					left: 0
+					top: 0
+					width: 100%	
+					height: 100%
+					opacity: 0
+					background-color: rgba(32, 32, 32, .5)
+					transition: opacity .1s
+				ul 
+					position: absolute
+					left: 0
+					top: 0
+					margin: 0
+					padding: 0
+					padding-top: 38px
+					background-color: #fff
+					height: 100%
+					list-style-type: none
+					box-shadow: 0 0 20px rgba(0,0,0,.3)
+					transform: translateX(-100%)
+					transition: all .5s cubic-bezier(.5,.25,.015,1)
+					li 
+						margin: 0 24px
+						padding: 18px 0 17px
+						min-width: 270px
+						border-top: 1px solid #eaeaea
+						a 
+							text-transform: uppercase
+							font-family: 'Open Sans Condensed', sans-serif
+							font-size: .9rem
+							font-weight: bold
+					.menu_mobile_header
+						display: flex
+						justify-content: space-between
+						align-items: center
+						padding-bottom: 46px
+						img 
+							max-height: 32px
+							margin-left: 0
+						.close
+							line-height: 1
+				ul:before
+					content: ''
+					display: block
+					position: absolute
+					left: -1px
+					top: 0
+					height: 100%
+					width: 1px
+					background-color: #000
+					box-shadow: 0 0 20px rgba(0,0,0,1)
+			.menu_mobile.active
+				transform: none
+				.menu_mobile_bg
+					opacity: 1
+					transition: opacity .1s .5s
+				ul
+					transform: none
+		.section_2
+			.game_block 
+				.open_hover_block, .close_hover_block
+					position: absolute
+					right: 16px
+					top: 10px
+					font-size: 20px
+					color: $color_white
+					z-index: 2
+				.open_hover_block
+					display: block
+				&.active
+					.open_hover_block
+						display: none
+					.close_hover_block
+						display: block
+			.game_block:hover 
+				.game_link:before 
+					background: none
+				.hover_block
+					.logo 
+						transform: translateY(100%)
+					ul 
+						opacity: 0
+			.game_block.active
+				.game_link:before 
+					background-color: rgba(252,36,66,.9)
+				.hover_block
+					.logo 
+						transform: none
+					ul 
+						opacity: 1
+						li:nth-of-type(2), li:nth-of-type(3)
+							transform: none
+		.section_3 
+			#nav_section3
+				max-width: 75%
 		.section_4 
 			.content_block 
 				h2
@@ -649,6 +790,14 @@ footer
 					max-height: 32px
 				.last_menu
 					display: none
+				.menu_mobile_link 
+					// align-self: flex-end
+					margin-left: auto
+					span
+						display: none
+					.icon-burger
+						display: block
+
 			.main_menu.fixed 
 				.logo
 					max-height: 24px
@@ -660,6 +809,12 @@ footer
 				text-align: center
 				h2 
 					font-size: 1.9rem
+			.menu_mobile 
+				transform: translateY(-100%)
+				ul
+					width: 100%
+					transform: translateY(-100%)
+
 		.section_2 
 			margin: 40px 0
 			h2
@@ -687,6 +842,8 @@ footer
 				transform: none
 				padding-right: 15px
 				padding-left: 15px
+				.links
+					justify-content: center
 	footer 
 		.section_1 
 			.menu
